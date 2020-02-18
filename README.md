@@ -19,21 +19,21 @@ No special requirements; note that this role requires root access, so either run
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-   common_proxy_git_configure: false
-   common_proxy_profile_configure: false
-   common_proxy_wget_configure: false
+    common_proxy_git_configure: false
+    common_proxy_profile_configure: false
+    common_proxy_wget_configure: false
 
 Choose which parts of the system should be configured with a proxy.
 
-   common_proxy_server: 127.0.0.1
+    common_proxy_server: 127.0.0.1
 
 Configure which proxy server to use.
 
-   common_proxy_port: 8080
+    common_proxy_port: 8080
 
 Configure the proxy port.
 
-   common_proxy_exceptions: "localhost, 127.0.0.0/8, ::1"
+    common_proxy_exceptions: "localhost, 127.0.0.0/8, ::1"
 
 Configure proxy exceptions like e.g. local hosts.
 
