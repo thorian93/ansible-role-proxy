@@ -1,0 +1,17 @@
+---
+- name: Create profile.d Script to set Proxy globally.
+  lineinfile:
+   dest: /etc/profile.d/proxy.sh
+   line: "{{ item.line }}"
+   regexp: "{{ item.regexp }}"
+   create: yes
+   owner: root
+   group: root
+   mode: 0644
+  with_items:
+   - line: "export http_proxy=http://{{ common_proxy_server }}:{{ common_proxy_port }}"
+     regexp: "^export http_proxy=.*"
+   - line: "export https_proxy=http://{{ common_proxy_server }}:{{ common_proxy_port }}"
+     regexp: "^export https_proxy=.*"
+   - line: "export no_proxy={{ common_proxy_exceptions }}"
+     regexp: "^export no_proxy=.*"

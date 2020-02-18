@@ -1,0 +1,21 @@
+---
+# Support for OSes:
+common_proxy_stable_os:
+  - Debian 9
+  - Debian 10
+  - Ubuntu 16
+  - Ubuntu 18
+  - CentOS 7
+  - CentOS 8
+  - Fedora 30
+  - Fedora 31
+  - openSUSE Leap 42
+
+# Common Management Selections:
+common_proxy_git_configure: false
+common_proxy_profile_configure: false
+common_proxy_wget_configure: false
+
+common_proxy_server: 127.0.0.1
+common_proxy_port: 8080
+common_proxy_exceptions: "localhost, 127.0.0.0/8, ::1"
