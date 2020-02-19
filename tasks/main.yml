@@ -17,3 +17,7 @@
 - name: Include Proxy for Git Playbook
   include_tasks: git.yml
   when: common_proxy_git_configure
+
+- name: Include Proxy for APT Playbook
+  include_tasks: apt.yml
+  when: common_proxy_apt_configure and ansible_pkg_mgr == "apt"

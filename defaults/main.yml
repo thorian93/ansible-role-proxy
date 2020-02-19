@@ -9,13 +9,20 @@ common_proxy_stable_os:
   - CentOS 8
   - Fedora 30
   - Fedora 31
+  - openSUSE Leap 15
   - openSUSE Leap 42
 
 # Common Management Selections:
+common_proxy_apt_configure: false
 common_proxy_git_configure: false
 common_proxy_profile_configure: false
 common_proxy_wget_configure: false
 
 common_proxy_server: 127.0.0.1
 common_proxy_port: 8080
-common_proxy_exceptions: "localhost, 127.0.0.0/8, ::1"
+common_proxy_exceptions:
+  - 127.0.0.0/8
+  - ::1
+
+common_proxy_apt_external_repositories: []
+common_proxy_apt_exceptions: []

@@ -1,0 +1,8 @@
+Acquire::http::Proxy {
+{% for external_repository in common_proxy_apt_external_repositories %}
+    {{ external_repository }} "http://{{ common_proxy_server }}:{{ common_proxy_port }}";
+{% endfor %}
+{% for proxy_exception in common_proxy_apt_exceptions %}
+    {{ proxy_exception }} DIRECT;
+{% endfor %}
+}
