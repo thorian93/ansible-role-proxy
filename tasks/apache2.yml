@@ -5,7 +5,7 @@
    state: present
    line: "{{ item.line }}"
    regexp: "{{ item.regexp }}"
-   create: yes
+   create: no
   with_items:
     - line: "export http_proxy='http://{{ common_proxy_server }}:{{ common_proxy_port }}'"
       regexp: "^export http_proxy=.*"
