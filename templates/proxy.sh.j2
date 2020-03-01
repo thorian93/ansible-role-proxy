@@ -1,3 +1,0 @@
-export http_proxy=http://{{ common_proxy_server }}:{{ common_proxy_port }}"
-export https_proxy=http://{{ common_proxy_server }}:{{ common_proxy_port }}"
-export no_proxy="localhost{% for proxy_exception in common_proxy_exceptions %}, {{ proxy_exception }}{% endfor %}"

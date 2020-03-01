@@ -2,7 +2,7 @@
 - name: Create proxy.sh script in profile.d to set Proxy for interactive Shells globally.
   template:
    dest: /etc/profile.d/99proxy.sh
-   src: proxy.sh.j2
+   src: 99proxy.sh.j2
    owner: root
    group: root
    mode: 0644

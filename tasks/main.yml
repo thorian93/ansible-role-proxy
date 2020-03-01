@@ -10,6 +10,10 @@
   include_tasks: profile.yml
   when: common_proxy_profile_configure
 
+- name: Include Proxy for Bash Playbook
+  include_tasks: bash.yml
+  when: common_proxy_bash_configure
+
 - name: Include Proxy for wget Playbook
   include_tasks: wget.yml
   when: common_proxy_wget_configure

@@ -9,11 +9,12 @@ common_proxy_stable_os:
   - CentOS 8
   - Fedora 30
   - Fedora 31
-  - openSUSE Leap 15
-  - openSUSE Leap 42
+  # - openSUSE Leap 15
+  # - openSUSE Leap 42
 
 # Common Management Selections:
 common_proxy_apt_configure: false
+common_proxy_bash_configure: false
 common_proxy_git_configure: false
 common_proxy_profile_configure: false
 common_proxy_wget_configure: false
