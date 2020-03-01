@@ -25,3 +25,7 @@
 - name: Include Proxy for APT Playbook
   include_tasks: apt.yml
   when: common_proxy_apt_configure and ansible_pkg_mgr == "apt"
+
+- name: Include Proxy for Apache2 Playbook
+  include_tasks: apache2.yml
+  when: common_proxy_apache2_configure
