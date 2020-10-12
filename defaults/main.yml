@@ -1,17 +1,17 @@
 ---
 # Support for OSes:
 common_proxy_stable_os:
-  - Debian 9
-  - Debian 10
-  - Ubuntu 16
-  - Ubuntu 18
   - CentOS 7
   - CentOS 8
+  - Debian 9
+  - Debian 10
   - Fedora 30
   - Fedora 31
   - Fedora 32
-  # - openSUSE Leap 15
-  # - openSUSE Leap 42
+  # - opensuse 15.2
+  # - opensuse 42.2
+  - Ubuntu 16
+  - Ubuntu 18
 
 # Common Management Selections:
 common_proxy_apache2_configure: false
