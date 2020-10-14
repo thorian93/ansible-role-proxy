@@ -12,6 +12,7 @@ common_proxy_stable_os:
   # - openSUSE Leap 42
   - Ubuntu 16
   - Ubuntu 18
+  - Ubuntu 20
 
 # Common Management Selections:
 common_proxy_apache2_configure: false
