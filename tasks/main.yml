@@ -1,31 +1,31 @@
 ---
-- name: Preflight - Fail if target host is not stable for this Role.
+- name: "Preflight - Fail if target host is not stable for this Role."
   fail:
     msg: "This role is not stable for the target operating system, {{ ansible_distribution }} {{ ansible_distribution_major_version }}."
   when: (ansible_distribution is not defined) or
         (ansible_distribution_version is not defined) or
         (ansible_distribution+" "+ansible_distribution_major_version not in common_proxy_stable_os)
 
-- name: Include Proxy for Profile Playbook
+- name: "Include Proxy for Profile Playbook."
   include_tasks: profile.yml
   when: common_proxy_profile_configure
 
-- name: Include Proxy for Bash Playbook
+- name: "Include Proxy for Bash Playbook."
   include_tasks: bash.yml
   when: common_proxy_bash_configure
 
-- name: Include Proxy for wget Playbook
+- name: "Include Proxy for wget Playbook."
   include_tasks: wget.yml
   when: common_proxy_wget_configure
 
-- name: Include Proxy for Git Playbook
+- name: "Include Proxy for Git Playbook."
   include_tasks: git.yml
   when: common_proxy_git_configure
 
-- name: Include Proxy for APT Playbook
+- name: "Include Proxy for APT Playbook."
   include_tasks: apt.yml
   when: common_proxy_apt_configure and ansible_pkg_mgr == "apt"
 
-- name: Include Proxy for Apache2 Playbook
+- name: "Include Proxy for Apache2 Playbook."
   include_tasks: apache2.yml
   when: common_proxy_apache2_configure

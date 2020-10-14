@@ -1,11 +1,11 @@
 ---
-- name: Add proxy variables to /etc/apache2/envvars to set Proxy for Apache2.
+- name: "Add proxy variables to /etc/apache2/envvars to set Proxy for Apache2."
   lineinfile:
-   path: /etc/apache2/envvars
-   state: present
-   line: "{{ item.line }}"
-   regexp: "{{ item.regexp }}"
-   create: no
+    path: /etc/apache2/envvars
+    state: present
+    line: "{{ item.line }}"
+    regexp: "{{ item.regexp }}"
+    create: 'no'
   with_items:
     - line: "export http_proxy='http://{{ common_proxy_server }}:{{ common_proxy_port }}'"
       regexp: "^export http_proxy=.*"

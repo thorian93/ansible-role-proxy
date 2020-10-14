@@ -1,5 +1,5 @@
 ---
-- name: Configure Proxy for APT.
+- name: "Configure Proxy for APT."
   template:
    dest: /etc/apt/apt.conf.d/99proxy
    src: 99proxy.j2
