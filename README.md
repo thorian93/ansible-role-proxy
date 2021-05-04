@@ -33,6 +33,11 @@ Choose which parts of the system should be configured with a proxy.
 
 Configure which proxy server to use.
 
+    common_proxy_username: username
+    common_proxy_password: password
+
+If defined, configure the username and password to use with proxy.
+
     common_proxy_port: 8080
 
 Configure the proxy port.
