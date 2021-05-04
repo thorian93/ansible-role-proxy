@@ -6,6 +6,11 @@
         (ansible_distribution_version is not defined) or
         (ansible_distribution+" "+ansible_distribution_major_version not in common_proxy_stable_os)
 
+- name: "Prepare proxy URL for username & password if needed."
+  set_fact:
+    common_proxy_server: "{{ common_proxy_username }}:{{ common_proxy_password }}@{{ common_proxy_server }}"
+  when: (common_proxy_username is defined) and (common_proxy_password is defined)
+
 - name: "Include Proxy for Profile Playbook."
   include_tasks: profile.yml
   when: common_proxy_profile_configure

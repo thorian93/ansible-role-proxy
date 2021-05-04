@@ -30,3 +30,6 @@ common_proxy_exceptions:
 
 common_proxy_apt_external_repositories: []
 common_proxy_apt_exceptions: []
+
+#common_proxy_username:
+#common_proxy_password:
