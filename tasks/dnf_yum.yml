@@ -1,0 +1,61 @@
+---
+- name: Prepare state of settings
+  set_fact:
+    proxy_state: "{{ 'absent' if (dnf_proxy_server == '' or dnf_proxy_port == '') else 'present'}}"
+    username_state: "{{ 'absent' if dnf_proxy_username == '' else 'present'}}"
+    password_state: "{{ 'absent' if dnf_proxy_password == '' else 'present'}}"
+
+
+- name: Configure proxy settings for dnf
+  ini_file:
+    dest: /etc/dnf/dnf.conf
+    section: main
+    option: proxy
+    value: "http://{{ dnf_proxy_server }}:{{ dnf_proxy_port }}"
+    state: "{{ proxy_state }}"
+  when: ansible_pkg_mgr == 'dnf'
+
+- name: Configure proxy_username for dnf
+  ini_file:
+    dest: /etc/dnf/dnf.conf
+    section: main
+    option: proxy_username
+    value: "{{ dnf_proxy_username }}"
+    state: "{{ username_state }}"
+  when: ansible_pkg_mgr == 'dnf'
+
+- name: Configure proxy_password for dnf
+  ini_file:
+    dest: /etc/dnf/dnf.conf
+    section: main
+    option: proxy_password
+    value: "{{ dnf_proxy_password }}"
+    state: "{{ password_state }}"
+  when: ansible_pkg_mgr == 'dnf'
+
+- name: Configure proxy settings for yum
+  ini_file:
+    dest: /etc/yum/yum.conf
+    section: main
+    option: proxy
+    value: "http://{{ dnf_proxy_server }}:{{ dnf_proxy_port }}"
+    state: "{{ proxy_state }}"
+
+  when: ansible_pkg_mgr == 'yum'
+
+- name: Configure proxy_username for yum
+  ini_file:
+    dest: /etc/yum/yum.conf
+    section: main
+    option: proxy_username
+    state: "{{ username_state }}"
+  when: ansible_pkg_mgr == 'yum'
+
+- name: Configure password for dnf
+  ini_file:
+    dest: /etc/yum/yum.conf
+    section: main
+    option: proxy_password
+    value: "{{ dnf_proxy_password }}"
+    state: "{{ password_state }}"
+  when: ansible_pkg_mgr == 'yum'
