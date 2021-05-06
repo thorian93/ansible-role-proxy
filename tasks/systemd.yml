@@ -1,0 +1,29 @@
+---
+- block:
+  - name: "Ensure systemd configuration directory exists."
+    file:
+      dest: /etc/systemd/system.conf.d
+      state : directory
+      mode: 0755
+      owner: root
+      group: root      
+
+  - name: "Configure proxy as systemd default."
+    template:
+      dest: /etc/systemd/system.conf.d/99proxy.conf
+      src: 99proxy.conf.j2
+      mode: 0644
+      owner: root
+      group: root
+
+  - name: "Reload systemd configuration."
+    systemd:
+      daemon-reload: yes
+
+  when: common_proxy_server != "" and common_proxy_port != ""
+
+- name: "Remove proxy from systemd default."
+  file:
+    dest: /etc/systemd/system.conf.d/99proxy.conf
+    state: absent
+  when: common_proxy_server == "" or common_proxy_port == ""

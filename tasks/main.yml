@@ -29,3 +29,7 @@
 - name: "Include Proxy for Apache2 Playbook."
   include_tasks: apache2.yml
   when: common_proxy_apache2_configure
+
+- name: "Include Proxy as default for systemd."
+  include_tasks: systemd.yml
+  when: common_proxy_systemd_configure
