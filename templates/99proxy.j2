@@ -1,8 +1,10 @@
+# Ansible Managed
+
+Acquire::http::Proxy "http://{{ apt_proxy_server_enhanced }}:{{ apt_proxy_port }}";
+{% if apt_proxy_exceptions|length > 0 %}
 Acquire::http::Proxy {
-{% for external_repository in common_proxy_apt_external_repositories %}
-    {{ external_repository }} "http://{{ common_proxy_server }}:{{ common_proxy_port }}";
-{% endfor %}
-{% for proxy_exception in common_proxy_apt_exceptions %}
+{% for proxy_exception in apt_proxy_exceptions %}
     {{ proxy_exception }} DIRECT;
 {% endfor %}
 }
+{% endif %}
