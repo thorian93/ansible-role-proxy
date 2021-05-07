@@ -16,10 +16,6 @@
       owner: root
       group: root
 
-  - name: "Reload systemd configuration."
-    systemd:
-      daemon-reload: yes
-
   when: common_proxy_server != "" and common_proxy_port != ""
 
 - name: "Remove proxy from systemd default."
@@ -27,3 +23,8 @@
     dest: /etc/systemd/system.conf.d/99proxy.conf
     state: absent
   when: common_proxy_server == "" or common_proxy_port == ""
+
+
+- name: "Reload systemd configuration."
+  systemd:
+    daemon-reload: yes
