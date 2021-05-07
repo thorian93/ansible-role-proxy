@@ -23,10 +23,14 @@ No special requirements; note that this role requires root access, so either run
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    common_proxy_git_configure: false
-    common_proxy_profile_configure: false
-    common_proxy_wget_configure: false
-    common_proxy_systemd_configure: false
+    common_proxy_apache2_configure: False
+    common_proxy_apt_configure: False
+    common_proxy_bash_configure: False
+    common_proxy_dnf_yum_configure: False
+    common_proxy_git_configure: False
+    common_proxy_profile_configure: False
+    common_proxy_wget_configure: False
+    common_proxy_systemd_configure: False
 
 Choose which parts of the system should be configured with a proxy.
 
