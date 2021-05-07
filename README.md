@@ -41,7 +41,6 @@ Configure the proxy port.
 
 Configure proxy exceptions like e.g. local hosts.
 
-<<<<<<< HEAD
     apt_proxy_server: "{{ common_proxy_server }}"
     apt_proxy_port: "{{ common_proxy_port }}"
     apt_proxy_username: ""
@@ -49,14 +48,12 @@ Configure proxy exceptions like e.g. local hosts.
     apt_proxy_exceptions: [ ]
 
 Configure proxy for apt / aptitude. Default to common_proxy. Set to blank to remove.
-=======
     dnf_proxy_server: "{{ common_proxy_server }}"
     dnf_proxy_port: "{{ common_proxy_port }}"
     dnf_proxy_username: ""
     dnf_proxy_password: ""
 
 Configure yum or dnf proxy. Set to blank to remove.
->>>>>>> wip_dnf-yum
 
 ## Dependencies
 
