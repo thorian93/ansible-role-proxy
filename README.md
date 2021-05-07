@@ -26,6 +26,7 @@ Available variables are listed below, along with default values (see `defaults/m
     common_proxy_git_configure: false
     common_proxy_profile_configure: false
     common_proxy_wget_configure: false
+    common_proxy_systemd_configure: false
 
 Choose which parts of the system should be configured with a proxy.
 

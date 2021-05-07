@@ -22,6 +22,7 @@ common_proxy_dnf_yum_configure: False
 common_proxy_git_configure: False
 common_proxy_profile_configure: False
 common_proxy_wget_configure: False
+common_proxy_systemd_configure: False
 
 
 common_proxy_server: 127.0.0.1
