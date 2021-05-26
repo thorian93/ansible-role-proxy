@@ -32,6 +32,10 @@ Available variables are listed below, along with default values (see `defaults/m
     common_proxy_wget_configure: False
     common_proxy_systemd_configure: False
 
+Choose if this role must search older proxy settings and deactivate them:
+
+    other_proxy_remove: False
+
 Choose which parts of the system should be configured with a proxy.
 
     common_proxy_server: 127.0.0.1

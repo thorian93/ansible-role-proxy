@@ -24,7 +24,10 @@ common_proxy_profile_configure: False
 common_proxy_wget_configure: False
 common_proxy_systemd_configure: False
 
+# Whether to try remove old proxy settings or not:
+common_proxy_remove_older_settings: False
 
+# Common proxy base settings:
 common_proxy_server: 127.0.0.1
 common_proxy_port: 8080
 common_proxy_exceptions:
@@ -32,6 +35,7 @@ common_proxy_exceptions:
   - ::1
 
 # APT vars
+# Set to blank "" to remove lines from dnf configuration
 apt_proxy_server: "{{ common_proxy_server }}"
 apt_proxy_port: "{{ common_proxy_port }}"
 apt_proxy_username: ""
