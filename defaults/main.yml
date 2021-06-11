@@ -21,6 +21,7 @@ common_proxy_bash_configure: 'false'
 common_proxy_git_configure: 'false'
 common_proxy_profile_configure: 'false'
 common_proxy_wget_configure: 'false'
+common_proxy_systemd_configure: 'false'
 
 common_proxy_server: 127.0.0.1
 common_proxy_port: 8080
