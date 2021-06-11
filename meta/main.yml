@@ -28,6 +28,10 @@ galaxy_info:
         - 30
         - 31
         - 32
+    - name: opensuse
+      versions:
+        - 15.2
+        - 42.2
     - name: Ubuntu
       versions:
         - Xenial

@@ -8,8 +8,9 @@ common_proxy_stable_os:
   - Fedora 30
   - Fedora 31
   - Fedora 32
-  # - openSUSE Leap 15
-  # - openSUSE Leap 42
+  - Fedora 33
+  - openSUSE Leap 15
+  - openSUSE Leap 42
   - Ubuntu 16
   - Ubuntu 18
   - Ubuntu 20
@@ -23,8 +24,8 @@ common_proxy_profile_configure: 'false'
 common_proxy_wget_configure: 'false'
 common_proxy_systemd_configure: 'false'
 
-common_proxy_server: 127.0.0.1
-common_proxy_port: 8080
+common_proxy_server: "127.0.0.1"
+common_proxy_port: "8080"
 common_proxy_exceptions:
   - 127.0.0.0/8
   - ::1
