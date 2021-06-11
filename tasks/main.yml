@@ -26,6 +26,10 @@
   include_tasks: apt.yml
   when: common_proxy_apt_configure | bool and ansible_pkg_mgr == "apt"
 
+- name: "Include Proxy for dnf / yum Playbook."
+  include_tasks: dnf_yum.yml
+  when: common_proxy_dnf_yum_configure and (ansible_pkg_mgr == "dnf" or ansible_pkg_mgr == "yum")
+
 - name: "Include Proxy for Apache2 Playbook."
   include_tasks: apache2.yml
   when: common_proxy_apache2_configure | bool

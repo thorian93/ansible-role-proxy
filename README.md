@@ -47,6 +47,13 @@ Configure the proxy port.
 
 Configure proxy exceptions like e.g. local hosts.
 
+    dnf_proxy_server: "{{ common_proxy_server }}"
+    dnf_proxy_port: "{{ common_proxy_port }}"
+    dnf_proxy_username: ""
+    dnf_proxy_password: ""
+
+Configure yum or dnf proxy. Set to blank to remove.
+
     common_proxy_apt_external_repositories: []
     common_proxy_apt_exceptions: []
 
