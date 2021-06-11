@@ -3,9 +3,12 @@
   lineinfile:
     path: /etc/bash.bashrc
     state: present
+    mode: 0644
+    owner: root
+    group: root
     line: "{{ item.line }}"
     regexp: "{{ item.regexp }}"
-    create: 'yes'
+    create: 'true'
   with_items:
     - line: "export http_proxy='http://{{ common_proxy_server }}:{{ common_proxy_port }}'"
       regexp: "^export http_proxy=.*"

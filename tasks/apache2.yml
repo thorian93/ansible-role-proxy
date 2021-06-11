@@ -3,9 +3,12 @@
   lineinfile:
     path: /etc/apache2/envvars
     state: present
+    mode: 0644
+    owner: root
+    group: root
     line: "{{ item.line }}"
     regexp: "{{ item.regexp }}"
-    create: 'no'
+    create: 'false'
   with_items:
     - line: "export http_proxy='http://{{ common_proxy_server }}:{{ common_proxy_port }}'"
       regexp: "^export http_proxy=.*"
