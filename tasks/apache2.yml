@@ -1,14 +1,14 @@
 ---
-- name: "Add proxy variables to /etc/apache2/envvars to set Proxy for Apache2."
+- name: "Add Proxy Variables to Apache2 Configuration."
   lineinfile:
-    path: /etc/apache2/envvars
+    path: /etc/{{ webserver_apache_name }}/envvars
     state: present
     mode: 0644
     owner: root
     group: root
     line: "{{ item.line }}"
     regexp: "{{ item.regexp }}"
-    create: 'false'
+    create: 'true'
   with_items:
     - line: "export http_proxy='http://{{ common_proxy_server }}:{{ common_proxy_port }}'"
       regexp: "^export http_proxy=.*"
@@ -22,3 +22,4 @@
       regexp: "^export HTTPS_PROXY=.*"
     - line: "export NO_PROXY='localhost{% for proxy_exception in common_proxy_exceptions %}, {{ proxy_exception }}{% endfor %}'"
       regexp: "^export NO_PROXY=.*"
+  when: webserver_apache_name != "None"
