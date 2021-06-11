@@ -31,18 +31,20 @@ common_proxy_exceptions:
   - 127.0.0.0/8
   - ::1
 
-apt_proxy_server: "{{ common_proxy_server }}"
-apt_proxy_port: "{{ common_proxy_port }}"
-apt_proxy_username: ""
-apt_proxy_password: ""
-apt_proxy_exceptions: [ ]
+# APT
+# Set to blank "" to remove lines from the configuration
+common_proxy_apt_proxy_server: "{{ common_proxy_server }}"
+common_proxy_apt_proxy_port: "{{ common_proxy_port }}"
+common_proxy_apt_proxy_username: ""
+common_proxy_apt_proxy_password: ""
+common_proxy_apt_proxy_exceptions: [ ]
 
 common_proxy_apt_external_repositories: []
 common_proxy_apt_exceptions: []
 
-# Yum / dnf vars
-# Set to blank "" to remove lines from dnf configuration
-dnf_proxy_server: "{{ common_proxy_server }}"
-dnf_proxy_port: "{{ common_proxy_port }}"
-dnf_proxy_username: ""
-dnf_proxy_password: ""
+# YUM / DNF
+# Set to blank "" to remove lines from the configuration
+common_proxy_dnf_proxy_server: "{{ common_proxy_server }}"
+common_proxy_dnf_proxy_port: "{{ common_proxy_port }}"
+common_proxy_dnf_proxy_username: ""
+common_proxy_dnf_proxy_password: ""
