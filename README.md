@@ -16,31 +16,41 @@ No special requirements; note that this role requires root access, so either run
 
     - hosts: foobar
       roles:
-        - role: ansible-role-common-proxy
+        - role: thorian93.proxy
           become: yes
 
 ## Role Variables
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    common_proxy_git_configure: false
-    common_proxy_profile_configure: false
-    common_proxy_wget_configure: false
-    common_proxy_systemd_configure: false
+    common_proxy_apache2_configure: 'false'
+    common_proxy_apt_configure: 'false'
+    common_proxy_bash_configure: 'false'
+    common_proxy_git_configure: 'false'
+    common_proxy_profile_configure: 'false'
+    common_proxy_wget_configure: 'false'
+    common_proxy_systemd_configure: 'false'
 
 Choose which parts of the system should be configured with a proxy.
 
-    common_proxy_server: 127.0.0.1
+    common_proxy_server: "127.0.0.1"
 
 Configure which proxy server to use.
 
-    common_proxy_port: 8080
+    common_proxy_port: "8080"
 
 Configure the proxy port.
 
-    common_proxy_exceptions: "localhost, 127.0.0.0/8, ::1"
+    common_proxy_exceptions:
+      - 127.0.0.0/8
+      - ::1
 
 Configure proxy exceptions like e.g. local hosts.
+
+    common_proxy_apt_external_repositories: []
+    common_proxy_apt_exceptions: []
+
+Configure how to handle APT sources. This ensures that external repositories are fetched through the proxy but local repositories can bypass it.
 
 ## Dependencies
 
@@ -67,7 +77,7 @@ Kudos to [HarryHarcourt](https://github.com/HarryHarcourt) for this idea!
       hosts: all
       become: yes
       roles:
-        - ansible-role-common-proxy
+        - thorian93.proxy
 
 ## Contributing
 
