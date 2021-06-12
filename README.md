@@ -26,6 +26,7 @@ Available variables are listed below, along with default values (see `defaults/m
     common_proxy_apache2_configure: 'false'
     common_proxy_apt_configure: 'false'
     common_proxy_bash_configure: 'false'
+    common_proxy_dnf_yum_configure: 'false'
     common_proxy_git_configure: 'false'
     common_proxy_profile_configure: 'false'
     common_proxy_wget_configure: 'false'
@@ -51,16 +52,16 @@ Configure proxy exceptions like e.g. local hosts.
     common_proxy_apt_proxy_port: "{{ common_proxy_port }}"
     common_proxy_apt_proxy_username: ""
     common_proxy_apt_proxy_password: ""
-    common_proxy_apt_proxy_exceptions: [ ]
+    common_proxy_apt_proxy_exceptions: []
 
-Configure proxy for apt / aptitude. Default to common_proxy. Set to blank to remove.
+Configure proxy for APT or Aptitude. Set to blank to remove.
 
     common_proxy_dnf_proxy_server: "{{ common_proxy_server }}"
     common_proxy_dnf_proxy_port: "{{ common_proxy_port }}"
     common_proxy_dnf_proxy_username: ""
     common_proxy_dnf_proxy_password: ""
 
-Configure yum or dnf proxy. Set to blank to remove.
+Configure YUM or DNF proxy. Set to blank to remove.
 
     common_proxy_apt_external_repositories: []
     common_proxy_apt_exceptions: []
