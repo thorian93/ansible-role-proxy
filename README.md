@@ -1,10 +1,10 @@
-# Ansible Role: Common Proxy
+# Ansible Role: Proxy
 
 This role manages proxy settings of Linux systems.
 
-[![Ansible Role: Common Proxy](https://img.shields.io/ansible/role/55132?style=flat-square)](https://galaxy.ansible.com/thorian93/proxy)
-[![Ansible Role: Common Proxy](https://img.shields.io/ansible/quality/55132?style=flat-square)](https://galaxy.ansible.com/thorian93/proxy)
-[![Ansible Role: Common Proxy](https://img.shields.io/ansible/role/d/55132?style=flat-square)](https://galaxy.ansible.com/thorian93/proxy)
+[![Ansible Role: Proxy](https://img.shields.io/ansible/role/55132?style=flat-square)](https://galaxy.ansible.com/thorian93/proxy)
+[![Ansible Role: Proxy](https://img.shields.io/ansible/quality/55132?style=flat-square)](https://galaxy.ansible.com/thorian93/proxy)
+[![Ansible Role: Proxy](https://img.shields.io/ansible/role/d/55132?style=flat-square)](https://galaxy.ansible.com/thorian93/proxy)
 
 ## Here be Dragons!
 
@@ -23,50 +23,38 @@ No special requirements; note that this role requires root access, so either run
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    common_proxy_apache2_configure: 'false'
-    common_proxy_apt_configure: 'false'
-    common_proxy_bash_configure: 'false'
-    common_proxy_dnf_yum_configure: 'false'
-    common_proxy_git_configure: 'false'
-    common_proxy_profile_configure: 'false'
-    common_proxy_wget_configure: 'false'
-    common_proxy_systemd_configure: 'false'
+    proxy_apache2_configure: 'false'
+    proxy_apt_configure: 'false'
+    proxy_bash_configure: 'false'
+    proxy_dnf_yum_configure: 'false'
+    proxy_git_configure: 'false'
+    proxy_profile_configure: 'false'
+    proxy_wget_configure: 'false'
+    proxy_systemd_configure: 'false'
 
 Choose which parts of the system should be configured with a proxy.
 
-    common_proxy_server: "127.0.0.1"
+    proxy_server: "127.0.0.1"
 
 Configure which proxy server to use.
 
-    common_proxy_port: "8080"
+    proxy_port: "8080"
 
 Configure the proxy port.
 
-    common_proxy_exceptions:
+    proxy_exceptions:
       - 127.0.0.0/8
       - ::1
 
 Configure proxy exceptions like e.g. local hosts.
 
-    common_proxy_apt_proxy_server: "{{ common_proxy_server }}"
-    common_proxy_apt_proxy_port: "{{ common_proxy_port }}"
-    common_proxy_apt_proxy_username: ""
-    common_proxy_apt_proxy_password: ""
-    common_proxy_apt_proxy_exceptions: []
+    proxy_package_proxy_server: "{{ proxy_server }}"
+    proxy_package_proxy_port: "{{ proxy_port }}"
+    proxy_package_proxy_username: ""
+    proxy_package_proxy_password: ""
+    proxy_package_proxy_exceptions: []
 
-Configure proxy for APT or Aptitude. Set to blank to remove.
-
-    common_proxy_dnf_proxy_server: "{{ common_proxy_server }}"
-    common_proxy_dnf_proxy_port: "{{ common_proxy_port }}"
-    common_proxy_dnf_proxy_username: ""
-    common_proxy_dnf_proxy_password: ""
-
-Configure YUM or DNF proxy. Set to blank to remove.
-
-    common_proxy_apt_external_repositories: []
-    common_proxy_apt_exceptions: []
-
-Configure how to handle APT sources. This ensures that external repositories are fetched through the proxy but local repositories can bypass it.
+Configure proxy for the package manager. Set to blank to remove.
 
 ## Dependencies
 

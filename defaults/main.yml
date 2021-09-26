@@ -1,6 +1,5 @@
 ---
-# Support for OSes:
-common_proxy_stable_os:
+proxy_stable_os:
   - CentOS 7
   - CentOS 8
   - Debian 9
@@ -16,35 +15,25 @@ common_proxy_stable_os:
   - Ubuntu 20
 
 # Common Management Selections:
-common_proxy_apache2_configure: 'false'
-common_proxy_apt_configure: 'false'
-common_proxy_bash_configure: 'false'
-common_proxy_dnf_yum_configure: 'false'
-common_proxy_git_configure: 'false'
-common_proxy_profile_configure: 'false'
-common_proxy_wget_configure: 'false'
-common_proxy_systemd_configure: 'false'
+proxy_apache2_configure: 'false'
+proxy_bash_configure: 'false'
+proxy_git_configure: 'false'
+proxy_profile_configure: 'false'
+proxy_wget_configure: 'false'
+proxy_pkg_mgr_configure: 'false'
+proxy_systemd_configure: 'false'
 
-common_proxy_server: "127.0.0.1"
-common_proxy_port: "8080"
-common_proxy_exceptions:
+# Main Proxy
+proxy_server: "127.0.0.1"
+proxy_port: "8080"
+proxy_exceptions:
   - 127.0.0.0/8
   - ::1
 
-# APT
+# Package Proxy
 # Set to blank "" to remove lines from the configuration
-common_proxy_apt_proxy_server: "{{ common_proxy_server }}"
-common_proxy_apt_proxy_port: "{{ common_proxy_port }}"
-common_proxy_apt_proxy_username: ""
-common_proxy_apt_proxy_password: ""
-common_proxy_apt_proxy_exceptions: [ ]
-
-common_proxy_apt_external_repositories: []
-common_proxy_apt_exceptions: []
-
-# YUM / DNF
-# Set to blank "" to remove lines from the configuration
-common_proxy_dnf_proxy_server: "{{ common_proxy_server }}"
-common_proxy_dnf_proxy_port: "{{ common_proxy_port }}"
-common_proxy_dnf_proxy_username: ""
-common_proxy_dnf_proxy_password: ""
+proxy_package_proxy_server: "{{ proxy_server }}"
+proxy_package_proxy_port: "{{ proxy_port }}"
+proxy_package_proxy_username: ""
+proxy_package_proxy_password: ""
+proxy_package_proxy_exceptions: []

@@ -9,7 +9,7 @@
    group: root
    mode: 0644
   with_items:
-   - line: "http_proxy = http://{{ common_proxy_server }}:{{ common_proxy_port }}"
+   - line: "http_proxy = http://{{ proxy_server }}:{{ proxy_port }}"
      regexp: "^http_proxy =.*"
-   - line: "https_proxy = http://{{ common_proxy_server }}:{{ common_proxy_port }}"
+   - line: "https_proxy = http://{{ proxy_server }}:{{ proxy_port }}"
      regexp: "^https_proxy =.*"

@@ -1,6 +1,6 @@
 ---
 variables:
-  REPO_NAME: "ansible-role-common-proxy"
+  REPO_NAME: "ansible-role-proxy"
   GITHUB_REPO: "git@github.com:thorian93/${REPO_NAME}.git"
   GITLAB_REPO: "git@gitlab.com:thorian93_ansible/${REPO_NAME}.git"
 

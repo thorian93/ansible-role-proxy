@@ -1,8 +1,4 @@
 ---
-- name: "Prepare proxy URL for username and password if needed."
-  set_fact:
-    common_proxy_apt_proxy_server_enhanced: "{{ common_proxy_apt_proxy_server if (common_proxy_apt_proxy_username == '' or common_proxy_apt_proxy_password == '') else common_proxy_apt_proxy_username + '@' + common_proxy_apt_proxy_password + ':' + common_proxy_apt_proxy_server }}"
-
 - name: "Configure Proxy for APT."
   template:
     dest: /etc/apt/apt.conf.d/99proxy
@@ -10,10 +6,10 @@
     owner: root
     group: root
     mode: 0644
-  when: common_proxy_apt_proxy_server | length
+  when: proxy_package_proxy_server | length
 
 - name: "Remove proxy for APT."
   file:
     path: '/etc/apt/apt.conf.d/99proxy'
     state: absent
-  when: ( not common_proxy_apt_proxy_server | length ) or ( not common_proxy_apt_proxy_port | length )
+  when: ( not proxy_package_proxy_server | length ) or ( not proxy_package_proxy_port | length )

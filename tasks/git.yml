@@ -5,6 +5,6 @@
     state: present
 
 - name: "Configure git to use a Proxy."
-  shell: "git config --global http.proxy http://{{ common_proxy_server }}:{{ common_proxy_port }}"
+  shell: "git config --global http.proxy http://{{ proxy_server }}:{{ proxy_port }}"
   args:
     warn: 'false'
