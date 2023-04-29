@@ -1,10 +1,10 @@
 ---
 - name: "Update /etc/wgetrc with proxy settings."
-  lineinfile:
+  ansible.builtin.lineinfile:
    dest: /etc/wgetrc
    line: "{{ item.line }}"
    regexp: "{{ item.regexp }}"
-   create: 'yes'
+   create: true
    owner: root
    group: root
    mode: 0644

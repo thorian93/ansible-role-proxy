@@ -27,4 +27,4 @@
 
 - name: "Reload systemd configuration."
   systemd:
-    daemon-reload: 'true'
+    daemon-reload: true

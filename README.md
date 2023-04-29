@@ -1,5 +1,14 @@
 # Ansible Role: Proxy
 
+---
+
+## Unmaintained! Moved to collection!
+This role has moved to my [**main** collection](https://github.com/thorian93/main).  
+It is **not** maintained here anymore!  
+Head over to the [collection](https://github.com/thorian93/main) for up to date content.
+
+---
+
 This role manages proxy settings of Linux systems.
 
 [![Ansible Role: Proxy](https://img.shields.io/ansible/role/55132?style=flat-square)](https://galaxy.ansible.com/thorian93/proxy)
@@ -23,14 +32,14 @@ No special requirements; note that this role requires root access, so either run
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    proxy_apache2_configure: 'false'
-    proxy_apt_configure: 'false'
-    proxy_bash_configure: 'false'
-    proxy_dnf_yum_configure: 'false'
-    proxy_git_configure: 'false'
-    proxy_profile_configure: 'false'
-    proxy_wget_configure: 'false'
-    proxy_systemd_configure: 'false'
+    proxy_apache2_configure: false
+    proxy_apt_configure: false
+    proxy_bash_configure: false
+    proxy_dnf_yum_configure: false
+    proxy_git_configure: false
+    proxy_profile_configure: false
+    proxy_wget_configure: false
+    proxy_systemd_configure: false
 
 Choose which parts of the system should be configured with a proxy.
 

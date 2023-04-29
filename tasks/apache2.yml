@@ -1,6 +1,6 @@
 ---
 - name: "Add Proxy Variables to Apache2 Configuration."
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: /etc/{{ webserver_apache_name }}/envvars
     state: present
     mode: 0644
@@ -8,7 +8,7 @@
     group: root
     line: "{{ item.line }}"
     regexp: "{{ item.regexp }}"
-    create: 'true'
+    create: true
   with_items:
     - line: "export http_proxy='http://{{ proxy_server }}:{{ proxy_port }}'"
       regexp: "^export http_proxy=.*"
@@ -22,4 +22,4 @@
       regexp: "^export HTTPS_PROXY=.*"
     - line: "export NO_PROXY='localhost{% for proxy_exception in proxy_exceptions %}, {{ proxy_exception }}{% endfor %}'"
       regexp: "^export NO_PROXY=.*"
-  when: webserver_apache_name != "None"
+  when: webserver_apache_name != "none"

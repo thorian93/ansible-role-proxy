@@ -20,13 +20,13 @@ proxy_stable_os:
   - Ubuntu 22
 
 # Common Management Selections:
-proxy_apache2_configure: 'false'
-proxy_bash_configure: 'false'
-proxy_git_configure: 'false'
-proxy_profile_configure: 'false'
-proxy_wget_configure: 'false'
-proxy_pkg_mgr_configure: 'false'
-proxy_systemd_configure: 'false'
+proxy_apache2_configure: false
+proxy_bash_configure: false
+proxy_git_configure: false
+proxy_profile_configure: false
+proxy_wget_configure: false
+proxy_pkg_mgr_configure: false
+proxy_systemd_configure: false
 
 # Main Proxy
 proxy_server: "127.0.0.1"

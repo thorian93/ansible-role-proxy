@@ -1,6 +1,6 @@
 ---
 - name: "Add proxy variables to /etc/bash.bashrc to set Proxy for Bash Shells globally."
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: /etc/bash.bashrc
     state: present
     mode: 0644
@@ -8,7 +8,7 @@
     group: root
     line: "{{ item.line }}"
     regexp: "{{ item.regexp }}"
-    create: 'true'
+    create: true
   with_items:
     - line: "export http_proxy='http://{{ proxy_server }}:{{ proxy_port }}'"
       regexp: "^export http_proxy=.*"
